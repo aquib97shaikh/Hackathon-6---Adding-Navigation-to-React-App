@@ -70,7 +70,7 @@ const  Home=()=>{
     console.log("Home");
     return (
       <div>
-        <h1>You are on HomePage</h1>
+        You are home.
       </div>
     );
 }
@@ -78,7 +78,7 @@ const  About=()=>{
     console.log("About");
     return (
       <div>
-        <h1>You are on About Page</h1>
+        <h1>You are on the about page.</h1>
       </div>
     );
 }
