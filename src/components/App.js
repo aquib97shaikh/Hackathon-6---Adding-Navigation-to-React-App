@@ -39,7 +39,6 @@ class App extends Component {
                   </ul>
                 </nav>
                 <LocationDisplay />
-                Hello
               </div>
               <Switch>
                 <Route path="/about">
@@ -61,7 +60,7 @@ const  NoMatch=()=>{
     console.log("noMatch");
     return (
       <div>
-        <h1>No match</h1>
+        No match
       </div>
     );
 }
