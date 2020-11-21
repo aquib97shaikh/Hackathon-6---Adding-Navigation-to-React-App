@@ -86,9 +86,7 @@ const  About=()=>{
 const LocationDisplay = (props) => {
 
     let location = useLocation();
-    return <div>
-        <h1 data-testid="location-display">{location.pathname}</h1>
-    </div>
+    return <div data-testid="location-display">{location.pathname}</div>;
 }
 
 export default App;
