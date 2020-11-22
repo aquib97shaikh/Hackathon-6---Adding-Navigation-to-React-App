@@ -21,31 +21,20 @@ class App extends Component {
         return (
           <div id="main">
             <BrowserRouter>
-              <div>
-                <nav>
-                  <ul>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                      <Link to="/aa">not linked</Link>
-                    </li>
-                    <li>
-                      <Link to="/aae">bkl</Link>
-                    </li>
-                  </ul>
-                </nav>
-                <LocationDisplay />
-              </div>
+              <LocationDisplay />
+
               <Switch>
                 <Route path="/about">
-                  <About />
+                  <>
+                    <LinkTemplate />
+                    <About />
+                  </>
                 </Route>
                 <Route exact path="/">
-                  <Home />
+                  <>
+                    <LinkTemplate />
+                    <Home />
+                  </>
                 </Route>
                 <Route path="*">
                   <NoMatch />
@@ -56,11 +45,34 @@ class App extends Component {
         );
     }
 } 
+const LinkTemplate = () => {
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/aa">not linked</Link>
+          </li>
+          <li>
+            <Link to="/aae">bkl</Link>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  );
+}
 const  NoMatch=()=>{
     console.log("noMatch");
     return (
       <div>
-        No match
+        <h1>No match</h1>
       </div>
     );
 }
@@ -69,7 +81,7 @@ const  Home=()=>{
     console.log("Home");
     return (
       <div>
-        You are home.
+       <h1> You are home.</h1>
       </div>
     );
 }
@@ -82,10 +94,10 @@ const  About=()=>{
     );
 }
 
-const LocationDisplay = (props) => {
+const LocationDisplay = () => {
 
     let location = useLocation();
-    return <div data-testid="location-display">{location.pathname}</div>;
+    return <div data-testid="location-display"><h1>{location.pathname}</h1></div>;
 }
 
 export default App;
