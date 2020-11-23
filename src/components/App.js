@@ -4,7 +4,7 @@ import {
     BrowserRouter ,
     Switch,
     Route,
-    NavLink,
+    Link,
     useLocation
   } from "react-router-dom";
 
@@ -15,8 +15,6 @@ class App extends Component {
     }
     
     render() {
-        console.log("dde");
-        
 
         return (
           <div id="main">
@@ -44,7 +42,6 @@ const LinkTemplate = () => {
   );
 }
 const  NoMatch=()=>{
-    console.log("noMatch");
     return (
       <div>
         <h1>No match</h1>
