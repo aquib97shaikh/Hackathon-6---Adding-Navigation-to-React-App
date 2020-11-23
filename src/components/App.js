@@ -32,22 +32,9 @@ class App extends Component {
 const LinkTemplate = () => {
   return (
     <div className="menu-div">
-      {/* <nav className="menu-nav">
-        <ul className="menu">
-          <li> */}
-            <a href="/">Home</a>
-          {/* </li>
-          <li> */}
-            <a href="/about">About</a>
-          {/* </li> */}
-          {/* <li>
-            <NavLink to="/about/66">not linked</NavLink>
-          </li>
-          <li>
-            <NavLink to="/aae">bkl</NavLink>
-          </li> */}
-        {/* </ul>
-      </nav> */}
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+ 
       <Switch>
         <Route path="/about" component={About} />
         <Route exact path="/" component={Home} />
@@ -69,8 +56,7 @@ const  Home=()=>{
     console.log("Home");
     return (
       <div>
-        
-       <h1>You are home.</h1>
+        <h1>You are home.</h1>
       </div>
     );
 }
@@ -79,20 +65,14 @@ const  About=(props)=>{
     return (
       <div>
         <h1>You are on the about page.</h1>
-        {/* <Route path={`${props.match.path}/:id`} component = {AboutId} /> */}
       </div>
     );
 }
 
-const LocationDisplay = () => {
+export function LocationDisplay(){
 
-    let location = useLocation();
-    return <h1 data-testid="location-display">{location.pathname}</h1>;
+  let {pathname} = useLocation();
+    return <h1 data-testid="location-display">{pathname}</h1>;
 }
-// const AboutId =(props)=>{
-//   console.log("id is "+props.match.params.id);
-//   return <div>
-//     <h1>{props.match.params.id}</h1>
-//   </div>
-// }
+
 export default App;
