@@ -23,21 +23,7 @@ class App extends Component {
             <BrowserRouter>
               <LinkTemplate />
               <LocationDisplay />
-              <Switch>
-                <Route path="/about">
-                  <>
-                    <About />
-                  </>
-                </Route>
-                <Route exact path="/">
-                  <>
-                    <Home />
-                  </>
-                </Route>
-                <Route path="*">
-                  <NoMatch />
-                </Route>
-              </Switch>
+              
             </BrowserRouter>
           </div>
         );
@@ -46,24 +32,27 @@ class App extends Component {
 const LinkTemplate = () => {
   return (
     <div className="menu-div">
-      
-      <nav className="menu-nav">
+      {/* <nav className="menu-nav">
         <ul className="menu">
-          <li>
-            <NavLink to="/" activeStyle={{ color: 'red', }}>Home</NavLink>
-          </li>
-          <li>
+          <li> */}
+            <NavLink to="/">Home</NavLink>
+          {/* </li>
+          <li> */}
             <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/aa">not linked</NavLink>
+          {/* </li> */}
+          {/* <li>
+            <NavLink to="/about/66">not linked</NavLink>
           </li>
           <li>
             <NavLink to="/aae">bkl</NavLink>
-          </li>
-        </ul>
-      </nav>
-      
+          </li> */}
+        {/* </ul>
+      </nav> */}
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route exact path="/" component={Home} />
+        <Route path="*" component={NoMatch} />
+      </Switch>
     </div>
   );
 }
@@ -80,15 +69,17 @@ const  Home=()=>{
     console.log("Home");
     return (
       <div>
-       <h1> You are home.</h1>
+        
+       <h1>You are home.</h1>
       </div>
     );
 }
-const  About=()=>{
+const  About=(props)=>{
     console.log("About");
     return (
       <div>
         <h1>You are on the about page.</h1>
+        {/* <Route path={`${props.match.path}/:id`} component = {AboutId} /> */}
       </div>
     );
 }
@@ -96,7 +87,12 @@ const  About=()=>{
 const LocationDisplay = () => {
 
     let location = useLocation();
-    return <div data-testid="location-display"><h1>{location.pathname}</h1></div>;
+    return <h1 data-testid="location-display">{location.pathname}</h1>;
 }
-
+// const AboutId =(props)=>{
+//   console.log("id is "+props.match.params.id);
+//   return <div>
+//     <h1>{props.match.params.id}</h1>
+//   </div>
+// }
 export default App;
