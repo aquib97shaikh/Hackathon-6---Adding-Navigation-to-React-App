@@ -10,3 +10,71 @@ button{
     justify-content: center;
     align-items: center;
 }
+.menu {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    font-style: none;
+}
+.menu li {
+    border:1px solid black;
+    padding: 10px;
+    margin:10px;
+    transition:0.13s linear ;
+    
+}
+.menu li:hover{
+    background-color: #3f3f3f;
+    color:white;
+    padding:15px 25px;
+    border-radius:5px;
+
+}
+.menu li:hover a{
+    color:white;
+}
+.menu li a{
+    text-decoration: none;
+
+}
+.menu-div {
+    position: relative;
+}
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+  }
+  .hamburger-menu .bar {
+    height: 5px;
+    background: black;
+    border-radius: 5px;
+    margin: 3px 0px;
+    transform-origin: left;
+    transition: all 0.5s;
+  }
+  .hamburger-menu:hover .top {
+    transform: rotate(45deg);
+  }
+  
+  .hamburger-menu:hover .middle {
+    opacity: 0;
+  }
+  
+  .hamburger-menu:hover .bottom {
+    transform: rotate(-45deg);
+  }
+  
+  /* .menu-nav {
+      position: absolute;
+      left:-11111px;
+  } */
+  .hamburger-menu:hover .menu-nav {
+ left:10px;
+  }

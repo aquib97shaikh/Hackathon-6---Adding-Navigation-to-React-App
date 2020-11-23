@@ -4,7 +4,7 @@ import {
     BrowserRouter ,
     Switch,
     Route,
-    Link,
+    NavLink,
     useLocation
   } from "react-router-dom";
 
@@ -21,18 +21,16 @@ class App extends Component {
         return (
           <div id="main">
             <BrowserRouter>
+              <LinkTemplate />
               <LocationDisplay />
-
               <Switch>
                 <Route path="/about">
                   <>
-                    <LinkTemplate />
                     <About />
                   </>
                 </Route>
                 <Route exact path="/">
                   <>
-                    <LinkTemplate />
                     <Home />
                   </>
                 </Route>
@@ -47,24 +45,25 @@ class App extends Component {
 } 
 const LinkTemplate = () => {
   return (
-    <div>
-      <nav>
-        <ul>
+    <div className="menu-div">
+      
+      <nav className="menu-nav">
+        <ul className="menu">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" activeStyle={{ color: 'red', }}>Home</NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/aa">not linked</Link>
+            <NavLink to="/aa">not linked</NavLink>
           </li>
           <li>
-            <Link to="/aae">bkl</Link>
+            <NavLink to="/aae">bkl</NavLink>
           </li>
         </ul>
       </nav>
-
+      
     </div>
   );
 }
