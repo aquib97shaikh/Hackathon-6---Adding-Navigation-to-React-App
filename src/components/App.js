@@ -35,10 +35,10 @@ const LinkTemplate = () => {
       {/* <nav className="menu-nav">
         <ul className="menu">
           <li> */}
-            <NavLink to="/">Home</NavLink>
+            <a href="/">Home</a>
           {/* </li>
           <li> */}
-            <NavLink to="/about">About</NavLink>
+            <a href="/about">About</a>
           {/* </li> */}
           {/* <li>
             <NavLink to="/about/66">not linked</NavLink>
